@@ -1,0 +1,20 @@
+# Order of the test file loading
+file :
+    - login_case
+    - homepage_case
+
+# Test file mapping to test case
+login_case :
+    loginTestCase
+
+homepage_case :
+    homepageTestCase
+
+# Order of the test case in test file
+loginTestCase :
+    - test_phone_login_page
+    - test_login_fail
+    - test_login
+
+homepageTestCase :
+    - test_ask_from_home

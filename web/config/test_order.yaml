@@ -1,0 +1,11 @@
+# Order of the test file loading
+file :
+    - login_case
+
+# Test file mapping to test case
+login_case :
+    loginTestCase
+
+# Order of the test case in test file
+loginTestCase :
+    - test_login_fail

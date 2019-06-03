@@ -1,0 +1,74 @@
+## iOS capability
+desired_caps :
+
+    platformName : iOS
+
+    deviceName : iPhone XR
+
+    platformVersion : '12.1'
+
+    app : '/path/to/app'
+
+    automationName : XCUITest
+
+    useNewWDA : true
+
+    newCommandTimeout : 120
+
+    commandTimeouts : '90000'
+
+    noReset : false
+
+
+## Basic test info
+default:
+    userid : userid
+    username : &username 'username'
+    password : &password 'password'
+
+
+uicomponent :
+## loginPage
+    allow_button :
+        - 'ID'
+        - 'Allow'
+
+    login_button :
+        - 'ID'
+        - 'Sign in'
+
+    login_page_email :
+        - CLASSNAME
+        - XCUIElementTypeTextField
+
+    login_page_pass :
+        - CLASSNAME
+        - XCUIElementTypeSecureTextField
+
+    login_username_password :
+        - user : thisisusername #fail 1 test
+          password : thisispassword
+        - user : a\' or \'a\' = \'a #fail 2 test
+          password : password
+        - user : *username #success test
+          password : *password
+
+    userid_field :
+        - CLASSNAME
+        - XCUIElementTypeTextField
+
+    forgotpass_button :
+        - 'ID'
+        - Forgot password
+
+    phone_field :
+        - 'ID'
+        - '+852'
+
+    login_enter_button :
+        - 'ID'
+        - Confirm
+
+    dismiss_button :
+        - 'ID'
+        - Try Again

@@ -1,0 +1,72 @@
+## Android capability
+desired_caps :
+
+    platformName : Android
+
+    deviceName : emulator
+
+    platformVersion : '7.1.1'
+
+    avd : avd_name
+
+    avdArgs : '-gpu host -wipe-data -no-boot-anim -no-snapshot'
+
+    avdLaunchTimeout : 210000
+
+    app : '/path/to/apk'
+
+    appWaitPackage : package_name
+
+    appWaitActivity : activity_name
+
+    automationName : UiAutomator2
+
+    noReset : false
+
+## Basic test info
+default:
+    userid : userid
+    username : &username 'username'
+    password : &password 'password'
+
+uicomponent :
+## loginPage
+    login_button :
+        - 'ID'
+        - ':id/log_in'
+
+    login_page_email :
+        - 'ANDROID_UI'
+        - new UiSelector().resourceId(":id/editText").instance(0)
+
+    login_page_pass :
+        - 'ANDROID_UI'
+        - new UiSelector().resourceId(":id/editText").instance(1)
+
+    login_username_password :
+        - user : thisisusername
+          password : thisispassword
+        - user : a\' or \'a\' = \'a
+          password : password
+        - user : *username
+          password : *password
+
+    userid_field :
+        - ID
+        - ':id/username_input'
+
+    forgotpass_button :
+        - ID
+        - ':id/forgot_password'
+
+    phone_field :
+        - 'ID'
+        - ':id/phone_input'
+
+    login_enter_button :
+        - ID
+        - ':id/enter'
+
+    dismiss_button :
+        - 'ANDROID_UI'
+        - new UiSelector().resourceId(":id").text("TRY AGAIN")

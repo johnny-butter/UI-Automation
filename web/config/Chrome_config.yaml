@@ -1,0 +1,45 @@
+## Chrome capability
+desired_caps :
+## Basic test info
+default:
+    userid : userid
+    username : &username 'username'
+    password : &password 'password'
+
+uicomponent :
+## loginPage
+    login_button :
+        - 'LINK_TEXT'
+        - 'Login'
+
+    login_with_email_button:
+        - 'CSS'
+        - 'div._PdNQS'
+
+    login_page_email :
+        - 'CSS'
+        - 'input[autocomplete="username"]'
+
+    login_page_pass :
+        - 'CSS'
+        - 'input[autocomplete="password"]'
+
+    login_username_password :
+        - user : thisisusername
+          password : thisispassword
+        - user : a\' or \'a\' = \'a
+          password : password
+        - user : *username
+          password : *password
+
+    userid_field :
+        - 'CSS'
+        - 'input[autocomplete="username"]'
+
+    login_enter_button :
+        - CSS
+        - 'div._25zrD button._1ZJDe'
+
+    dismiss_button :
+        - CSS
+        - 'g#error'
